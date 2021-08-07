@@ -4,6 +4,10 @@
 回馈github，我也把毕设放上来吧，给没有思路写毕设的同学一个思路，自己也是忙于实习没时间写毕设，最后也是拿出来点零碎时间写了下，服务设计和表设计都存在问题，职责划分不太明确，需要注意一下，salute~
 
 毕设原型：根据b站视频教程所写，链接：https://www.bilibili.com/video/BV1dQ4y1A75e
+
+前端代码地址：https://github.com/hczs/training-front
+
+效果展示：http://81.70.19.46/
 #### 开发环境
 
 jdk1.8+MySQL5.7+maven3.6.3
