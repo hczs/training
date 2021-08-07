@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.plan.mapper.PlanStaffMapper">
+
+
+    <select id="getPlanFrontVoPage" resultType="com.hc.plan.entity.vo.front.PlanFrontVo">
+        SELECT
+            p.id,
+            p.`name`,
+            p.content,
+            p.purpose,
+            t.`name`  AS 'teacherName',
+            p.score,
+            ps.staff_summary AS 'summary',
+            p.begin_time AS 'beginTime',
+            p.end_time AS 'endTime',
+            ps.staff_score AS staffScore
+        FROM plan_staff ps
+                 LEFT JOIN plan p ON ps.plan_id = p.id
+                 LEFT JOIN teacher t ON ps.teacher_id = t.id
+        where ps.staff_id = #{staffId} and ps.del_flag = 0 AND p.del_flag = 0 AND p.status != 'Draft'
+    </select>
+
+    <select id="getPlanListPage" resultType="com.hc.plan.entity.vo.PlanStaffVo">
+        SELECT
+            ps.id,
+            p.`name`,
+            p.teacher_id AS teacherId,
+            ps.staff_summary AS summary,
+            p.score AS score,
+            p.begin_time AS beginTime,
+            p.end_time AS endTime,
+            ps.staff_id AS staffId,
+            ps.staff_score AS staffScore
+        FROM plan_staff ps
+                 LEFT JOIN plan p ON p.id = ps.plan_id
+        <if test="ew.emptyOfWhere == false">
+            ${ew.customSqlSegment}
+        </if>
+    </select>
+</mapper>

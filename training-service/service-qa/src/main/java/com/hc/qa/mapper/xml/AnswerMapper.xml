@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.qa.mapper.AnswerMapper">
+
+    <select id="getMyAnswer" resultType="com.hc.qa.entity.Question">
+        SELECT
+            q.id,
+            q.title,
+            q.create_time AS createTime
+        FROM answer a
+                 LEFT JOIN question q ON q.id = a.question_id
+        WHERE a.staff_id = ${staffId}
+        GROUP BY question_id
+    </select>
+</mapper>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.learning.mapper.CourseMapper">
+
+
+    <select id="getCoursePublishById" resultType="com.hc.learning.entity.vo.CoursePublishVo">
+        select
+            c.cover,
+            c.title,
+            c.lesson_num as lessonNumber,
+            c.description,
+            cc1.category_name as categoryOne,
+            cc2.category_name as categoryTwo,
+            t.`name` as teacherName
+        from course c
+                 LEFT JOIN course_category cc1 on c.category_parent_id = cc1.id
+                 LEFT JOIN course_category cc2 on c.category_id = cc2.id
+                 LEFT JOIN teacher t on c.teacher_id = t.id
+        where c.id = #{id}
+    </select>
+
+    <select id="getCourseInfoFrontById" resultType="com.hc.learning.entity.vo.front.CourseInfoFrontVo">
+        SELECT
+            c.cover,
+            c.title,
+            c.lesson_num as lessonNum,
+            c.view_count as viewCount,
+            c.learning_num as learningNum,
+            c.description,
+            cc1.category_name as categoryLevelOne,
+            cc2.category_name as categoryLevelTwo,
+            t.id as teacherId,
+            t.`name` as teacherName,
+            t.introduce,
+            t.avatar
+        FROM course c
+                 LEFT JOIN course_category cc1 on c.category_parent_id = cc1.id
+                 LEFT JOIN course_category cc2 on c.category_id = cc2.id
+                 LEFT JOIN teacher t on c.teacher_id = t.id
+        where c.id = #{id}
+    </select>
+
+    <select id="getHotCourse" resultType="com.hc.learning.entity.Course">
+        SELECT * FROM course c ORDER BY  c.learning_num DESC, c.view_count DESC LIMIT 4
+    </select>
+</mapper>

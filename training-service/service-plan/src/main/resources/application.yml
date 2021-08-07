@@ -1,0 +1,19 @@
+server:
+  port: 6006
+spring:
+  application:
+    name: service-plan
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 配置nacos注册中心地址
+  datasource: # 配置数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/staff_training?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password:
+  profiles:
+    active: dev # 开发环境配置文件
+
+mybatis-plus:
+  mapper-locations: classpath:com/hc/plan/mapper/xml/*.xml

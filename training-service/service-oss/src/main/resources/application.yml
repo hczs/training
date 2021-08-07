@@ -1,0 +1,21 @@
+server:
+  port: 6003
+spring:
+  application:
+    name: service-oss
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+# 阿里云oss常量配置
+aliyun:
+  endpoint:
+  keyid:
+  keysecret:
+  bucketname:

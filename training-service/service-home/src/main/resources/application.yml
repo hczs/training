@@ -1,0 +1,22 @@
+server:
+  port: 6005
+spring:
+  application:
+    name: service-home
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # 配置nacos注册中心地址
+  datasource: # 配置数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/staff_training?serverTimezone=GMT%2B8&characterEncoding=utf-8
+    username: root
+    password:
+  profiles:
+    active: dev # 开发环境配置文件
+  redis:
+    host: 127.0.0.1
+    port:
+    password:
+mybatis-plus:
+  mapper-locations: classpath:com/hc/home/mapper/xml/*.xml

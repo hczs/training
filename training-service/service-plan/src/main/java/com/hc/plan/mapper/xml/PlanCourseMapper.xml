@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.plan.mapper.PlanCourseMapper">
+
+    <select id="getCoursesByPlanId" resultType="com.hc.plan.entity.Course">
+        select
+            pc.course_id as id,
+            c.title
+        from plan_course pc
+                 left join course c on pc.course_id = c.id
+        where pc.plan_id = #{planId} and pc.del_flag = 0 and c.del_flag = 0
+    </select>
+</mapper>

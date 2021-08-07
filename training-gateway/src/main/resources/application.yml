@@ -1,0 +1,61 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: training-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          lower-case-service-id: true
+          enabled: true
+      routes:
+        - id: service-learning
+          uri: lb://service-learning
+          predicates:
+            - Path=/learning/**
+          filters:
+            # 去掉路由前缀，访问 localhost：8088/test/v2/api 转发的就是 localhost:8089/v2/api
+            # 1 : 代表剥离路径的个数
+            - StripPrefix=1
+        - id: service-ucenter
+          uri: lb://service-ucenter
+          predicates:
+            - Path=/ucenter/**
+          filters:
+            - StripPrefix=1
+        - id: service-oss
+          uri: lb://service-oss
+          predicates:
+            - Path=/oss/**
+          filters:
+            - StripPrefix=1
+        - id: service-video
+          uri: lb://service-video
+          predicates:
+            - Path=/video/**
+          filters:
+            - StripPrefix=1
+        - id: service-home
+          uri: lb://service-home
+          predicates:
+            - Path=/home/**
+          filters:
+            - StripPrefix=1
+        - id: service-plan
+          uri: lb://service-plan
+          predicates:
+            - Path=/plan/**
+          filters:
+            - StripPrefix=1
+        - id: service-qa
+          uri: lb://service-qa
+          predicates:
+            - Path=/qa/**
+          filters:
+            - StripPrefix=1
+
+
