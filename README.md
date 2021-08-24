@@ -56,3 +56,9 @@ SpringCloud、Nacos、SpringBoot、Redis、MyBatis-Plus、Vue、element-ui、Nux
 2. 然后创建数据库，字符集：utf8mb4 -- UTF-8 Unicode，排序规则：utf8mb4_general_ci，运行项目中的staff_training.sql文件，导入相关表，表设计有不合理的地方（但是能用），请后续自行修改
 3. 依次检查每个服务的配置文件，修改为你的配置
 4. 运行使用，访问http://localhost:8888/swagger-ui.html?urls.primaryName=service-learning 这个是学习中心的接口文档，右上角可以切换多个服务，查看各个服务的接口，与前端项目对接接口即可使用
+
+#### 部署及遇到的问题
+具体过程可以参考图片【redis一定要设置密码，更改默认端口，还有就是注意服务器配置】
+![项目部署](https://user-images.githubusercontent.com/43227582/130637833-758b9af8-a356-415c-bd6e-e3f7f4258cf4.png)
+思维导图xmind文件：https://www.aliyundrive.com/s/ZJcuqeMXKX2
+
