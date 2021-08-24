@@ -60,5 +60,5 @@ SpringCloud、Nacos、SpringBoot、Redis、MyBatis-Plus、Vue、element-ui、Nux
 #### 部署及遇到的问题
 具体过程可以参考图片【redis一定要设置密码，更改默认端口，还有就是注意服务器配置】
 ![项目部署](https://user-images.githubusercontent.com/43227582/130637833-758b9af8-a356-415c-bd6e-e3f7f4258cf4.png)
-思维导图xmind文件：https://www.aliyundrive.com/s/ZJcuqeMXKX2
+思维导图xmind文件：链接：https://pan.baidu.com/s/1Za2TYUwGVOuE2pdK460ptQ 提取码：5run
 
