@@ -35,6 +35,22 @@ SpringCloud、Nacos、SpringBoot、Redis、MyBatis-Plus、Vue、element-ui、Nux
 7. service-ucenter：用户中心，登录、注册相关功能
 8. service-video：对接阿里云视频点播服务，提供视频上传、播放凭证获取，视频信息获取相关功能
 
+#### 主要界面展示
+##### 课程列表
+![课程列表](https://user-images.githubusercontent.com/43227582/138546766-1e8f1ee6-2a1d-4b57-a20b-da92df4fd741.png)
+##### 课程观看
+![课程观看](https://user-images.githubusercontent.com/43227582/138546773-5f579e57-e5cc-493d-9b2b-4db3130909eb.png)
+##### 课程学习进度
+![课程学习进度](https://user-images.githubusercontent.com/43227582/138546791-af9855fb-3bad-4281-9e45-a9ee144ce678.png)
+##### 提问列表
+![提问列表](https://user-images.githubusercontent.com/43227582/138546800-3f0cb337-e777-4ed8-9ca9-e3a990c2c36d.png)
+##### 问题查看
+![问题回答](https://user-images.githubusercontent.com/43227582/138546806-9a8ad8f9-b76c-4224-8717-3549c9b54b33.png)
+##### 资料修改
+![资料修改](https://user-images.githubusercontent.com/43227582/138546819-d6538583-642e-41f5-a70d-01841fe9a262.png)
+##### 培训计划
+![培训计划](https://user-images.githubusercontent.com/43227582/138546830-c29a2e3d-dadf-423a-a583-ab1c6f853453.png)
+
 ### 安装教程
 
 #### 需要准备什么
