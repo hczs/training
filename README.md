@@ -7,7 +7,7 @@
 
 前端代码地址：https://github.com/hczs/training-front
 
-效果展示：http://81.70.19.46/
+效果展示（服务器已到期，请下拉查看截图）：http://81.70.19.46/
 #### 开发环境
 
 jdk1.8+MySQL5.7+maven3.6.3
